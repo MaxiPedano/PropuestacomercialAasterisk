@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta Comercial — Programa de Socio Estratégico | Asterisk</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; color: #1a1a2e; background: #f4f6f9; line-height: 1.6; }
+  .page { max-width: 1100px; margin: 0 auto; background: #fff; padding: 60px 70px; box-shadow: 0 0 40px rgba(0,0,0,.08); }
+  @media print { body { background: #fff; } .page { box-shadow: none; padding: 40px 50px; } }
+  h1 { font-size: 28px; color: #0f3460; margin-bottom: 6px; letter-spacing: -.5px; }
+  h2 { font-size: 22px; color: #0f3460; margin-top: 40px; margin-bottom: 14px; border-bottom: 3px solid #e94560; padding-bottom: 6px; }
+  h3 { font-size: 18px; color: #16213e; margin-top: 28px; margin-bottom: 10px; }
+  h4 { font-size: 15px; color: #333; margin-top: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: .5px; }
+  p { margin-bottom: 14px; font-size: 14.5px; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 36px 0; }
+  .subtitle { font-size: 16px; color: #555; margin-bottom: 4px; }
+  .meta { font-size: 13px; color: #888; margin-bottom: 20px; }
+  .confidencial { background: #e94560; color: #fff; display: inline-block; padding: 3px 14px; border-radius: 3px; font-size: 12px; font-weight: 700; letter-spacing: 1px; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0 22px; font-size: 13.5px; }
+  th { background: #0f3460; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; }
+  tr:nth-child(even) td { background: #f8f9fc; }
+  tr:hover td { background: #eef1f8; }
+  .highlight-row td { background: #e8f5e9 !important; font-weight: 600; }
+  .highlight-red td { background: #ffebee !important; }
+  .check { color: #2e7d32; font-size: 16px; }
+  blockquote { border-left: 4px solid #e94560; padding: 12px 18px; margin: 16px 0; background: #fef6f7; font-size: 14px; border-radius: 0 4px 4px 0; }
+  ul, ol { margin: 8px 0 14px 22px; font-size: 14.5px; }
+  li { margin-bottom: 5px; }
+  strong { color: #0f3460; }
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+  .card { background: #f8f9fc; border-radius: 8px; padding: 18px; border: 1px solid #e0e0e0; }
+  .card h4 { margin: 0 0 6px; font-size: 13px; color: #e94560; }
+  .card .num { font-size: 22px; font-weight: 700; color: #0f3460; }
+  .card .label { font-size: 12px; color: #777; }
+  .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 14px 0; }
+  .benefit-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; border-left: 4px solid #0f3460; }
+  .benefit-card h4 { margin: 0 0 4px; font-size: 14px; text-transform: none; letter-spacing: 0; }
+  .benefit-card p { margin: 0; font-size: 13px; color: #555; }
+  .phase { background: #f8f9fc; border-radius: 8px; padding: 20px; margin: 16px 0; border-left: 5px solid #0f3460; }
+  .phase h3 { margin-top: 0; }
+  .phase .tag { display: inline-block; background: #0f3460; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+  .toc { background: #f8f9fc; border-radius: 8px; padding: 18px 24px; margin: 20px 0; border: 1px solid #e0e0e0; }
+  .toc ul { list-style: none; margin: 0; padding: 0; }
+  .toc ul li { padding: 3px 0; font-size: 14px; }
+  .toc ul li a { color: #0f3460; text-decoration: none; }
+  .toc ul li a:hover { text-decoration: underline; }
+  .toc ul ul li { padding-left: 20px; font-size: 13px; }
+  .pricing-box { background: linear-gradient(135deg, #0f3460, #16213e); color: #fff; border-radius: 10px; padding: 24px; margin: 16px 0; }
+  .pricing-box h3 { color: #e94560; margin-top: 0; } .pricing-box h4 { color: #fff; }
+  .pricing-box table th { background: rgba(255,255,255,.15); }
+  .pricing-box table td { border-color: rgba(255,255,255,.1); }
+  .pricing-box tr:nth-child(even) td { background: rgba(255,255,255,.05); }
+  .pricing-box tr:hover td { background: rgba(255,255,255,.1); }
+  .badge { display: inline-block; background: #e94560; color: #fff; padding: 2px 10px; border-radius: 3px; font-size: 11px; font-weight: 700; letter-spacing: .5px; margin-left: 6px; }
+  .badge-green { background: #2e7d32; }
+  .placeholder { background: #fff8e1; border: 1px dashed #e9a840; border-radius: 4px; padding: 1px 6px; font-family: 'Consolas', monospace; font-size: 13px; color: #8a6100; }
+  .footer-note { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #999; text-align: center; }
+  @media (max-width: 700px) { .page { padding: 24px 18px; } h1 { font-size: 22px; } table { font-size: 12px; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>PROPUESTA COMERCIAL<br>PROGRAMA DE SOCIO ESTRATÉGICO</h1>
+<p class="subtitle">Modelo general de planes, módulos y reducción de cuota para socios estratégicos de Asterisk</p>
+<p class="meta">
+  <strong>Preparado para:</strong> <span class="placeholder">[NOMBRE DEL SOCIO ESTRATÉGICO]</span> &nbsp;|&nbsp;
+  <strong>Preparado por:</strong> Asterisk Consultora IT &nbsp;|&nbsp;
+  <strong>Mercado:</strong> Argentina &nbsp;|&nbsp;
+  <strong>Fecha:</strong> Agosto 2026 &nbsp;|&nbsp;
+  <strong>Versión:</strong> 3.0 — Modelo General
+</p>
+<span class="confidencial">CONFIDENCIAL</span>
+
+<hr>
+
+<h2>ÍNDICE</h2>
+<div class="toc">
+<ul>
+  <li><a href="#resumen">1. Resumen Ejecutivo</a></li>
+  <li><a href="#quienes">2. Quiénes Somos</a></li>
+  <li><a href="#modelo">3. Modelo Comercial de Asterisk</a>
+    <ul>
+      <li><a href="#con-consultoria">3.1 Planes con Consultoría</a></li>
+      <li><a href="#sin-consultoria">3.2 Planes sin Consultoría</a></li>
+      <li><a href="#modulos">3.3 Módulos Adicionales</a></li>
+      <li><a href="#roles">3.4 Roles Estándar (Plan Premium)</a></li>
+      <li><a href="#vigencia">3.5 Vigencia del Esquema de Precios</a></li>
+    </ul>
+  </li>
+  <li><a href="#socio">4. Programa de Socio Estratégico</a>
+    <ul>
+      <li><a href="#definicion">4.1 Definición y Reconocimiento</a></li>
+      <li><a href="#reduccion">4.2 Mecanismo de Reducción de Canon</a></li>
+      <li><a href="#regalias">4.3 Regalías Perpetuas</a></li>
+      <li><a href="#nacion">4.4 Cláusula de Nación Más Favorecida</a></li>
+      <li><a href="#ejemplo">4.5 Ejemplo Aplicado</a></li>
+    </ul>
+  </li>
+  <li><a href="#beneficios">5. Beneficios del Modelo</a></li>
+  <li><a href="#riesgos">6. Riesgos y Mitigación</a></li>
+  <li><a href="#plan">7. Plan de Implementación</a></li>
+  <li><a href="#glosario">8. Glosario</a></li>
+  <li><a href="#proximos">9. Próximos Pasos</a></li>
+</ul>
+</div>
+
+<hr>
+
+<!-- 1. RESUMEN EJECUTIVO -->
+<h2 id="resumen">1. RESUMEN EJECUTIVO</h2>
+<p><strong>Asterisk</strong> es una consultora IT que provee un sistema de gestión modular, ofrecido bajo dos modalidades comerciales: con acompañamiento de consultoría o de forma autogestionada. Este documento define el esquema de precios vigente y formaliza el <strong>Programa de Socio Estratégico</strong>: un mecanismo estándar, aplicable a cualquier persona o empresa que decida asociarse tempranamente con Asterisk, mediante el cual su cuota mensual se reduce de forma progresiva a medida que Asterisk suma nuevos sistemas vendidos, y recibe a cambio una regalía perpetua sobre las ventas futuras.</p>
+
+<div class="pricing-box">
+  <h3>POSICIONAMIENTO COMERCIAL</h3>
+  <p style="font-size:16px; margin-bottom:6px;"><strong>Un sistema de gestión modular, con o sin acompañamiento, adaptable a cualquier tipo de negocio.</strong></p>
+  <p style="font-size:13px; opacity:.9;">El cliente paga solo lo que usa: elige su plan base y suma únicamente los módulos que necesita. Sin costos ocultos.</p>
+</div>
+
+<p><strong>Este documento define dos cosas separadas:</strong></p>
+<ul>
+  <li><strong>La propuesta comercial general</strong> (Sección 3): los planes, precios y módulos que Asterisk ofrece a cualquier cliente.</li>
+  <li><strong>El Programa de Socio Estratégico</strong> (Sección 4): un beneficio adicional, aplicable a socios fundadores o inversores tempranos, que se apoya sobre el plan que ese socio haya contratado.</li>
+</ul>
+<p>Este último es un <strong>modelo estándar</strong>: se completa con los datos particulares de cada socio (nombre, plan contratado, fecha de inicio) pero las reglas de reducción y regalía son las mismas para todos, para evitar negociaciones caso por caso.</p>
+
+<hr>
+
+<!-- 2. QUIENES SOMOS -->
+<h2 id="quienes">2. QUIÉNES SOMOS</h2>
+<p>Asterisk es una consultora de tecnología que desarrolla e implementa un sistema de gestión modular para pequeñas y medianas empresas. Trabajamos bajo dos modalidades:</p>
+<div class="benefit-grid">
+  <div class="benefit-card"><h4>Con Consultoría</h4><p>Asterisk interviene activamente en la implementación y el acompañamiento del cliente: define el proceso de adopción, capacita al equipo y da soporte continuo según el nivel contratado.</p></div>
+  <div class="benefit-card"><h4>Sin Consultoría</h4><p>El cliente se autogestiona: Asterisk provee el sistema y el mantenimiento básico, pero no interviene en cómo el cliente lleva adelante la operación del sistema.</p></div>
+</div>
+
+<hr>
+
+<!-- 3. MODELO COMERCIAL -->
+<h2 id="modelo">3. MODELO COMERCIAL DE ASTERISK</h2>
+
+<h3 id="con-consultoria">3.1 Planes con Consultoría</h3>
+<p>Incluyen <strong>implementación acompañada de 3 meses</strong>: Asterisk guía al cliente en la puesta en marcha del sistema. A partir del cuarto mes, el cliente continúa pagando el canon de sistema más el nivel de soporte elegido.</p>
+<div class="pricing-box">
+  <h3>PLANES CON CONSULTORÍA — Implementación de 3 meses incluida</h3>
+  <p style="font-size:13px; opacity:.9; margin-bottom:14px;">Precios en dólares estadounidenses (USD), facturación mensual. Conversión a pesos según cotización de referencia.</p>
+  <table>
+    <thead>
+      <tr><th>Plan</th><th>Canon de Sistema (USD/mes)</th><th>Canon de Soporte (USD/mes)</th><th>Total (USD/mes)</th><th>Total (ARS/mes)*</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Soporte Básico</strong></td><td>$80</td><td>$127</td><td><strong>$207</strong></td><td>$320.850</td></tr>
+      <tr><td><strong>Soporte Estándar</strong></td><td>$80</td><td>$333</td><td><strong>$413</strong></td><td>$640.150</td></tr>
+      <tr><td><strong>Soporte Avanzado</strong></td><td>$80</td><td>$540</td><td><strong>$620</strong></td><td>$961.000</td></tr>
+      <tr style="background:rgba(233,69,96,.2); font-weight:700;"><td><strong>Soporte Exclusivo</strong></td><td>$80</td><td>$953</td><td><strong>$1.033</strong></td><td>$1.601.150</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px; opacity:.8; margin:10px 0 0;">* Cotización de referencia: $1.550 ARS/USD. Actualizar mensualmente al momento de facturar.</p>
+</div>
+<p>Los cuatro niveles comparten el mismo canon de sistema ($80/mes); lo que varía es la profundidad del soporte y acompañamiento incluido en cada nivel.</p>
+
+<h3 id="sin-consultoria">3.2 Planes sin Consultoría</h3>
+<p>El cliente se autogestiona: Asterisk no interviene en cómo lleva adelante el sistema, solo provee el software y un mantenimiento mínimo. Cada plan incluye una cantidad fija de usuarios y permite sumar usuarios adicionales a un precio fijo.</p>
+<table>
+  <thead>
+    <tr><th>Plan</th><th>Canon del Sistema</th><th>Soporte Mantenimiento</th><th>Usuarios Incluidos</th><th>Precio por Usuario Adicional</th><th>Total Base (USD/mes)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Normal</strong></td><td>$10</td><td>$10</td><td>1</td><td>$6</td><td><strong>$26</strong></td></tr>
+    <tr><td><strong>Estándar</strong></td><td>$12</td><td>$10</td><td>3</td><td>$6</td><td><strong>$40</strong></td></tr>
+    <tr class="highlight-row"><td><strong>Premium</strong></td><td>$40</td><td>$10</td><td>5</td><td>$6</td><td><strong>$80</strong></td></tr>
+  </tbody>
+</table>
+<p>El total base ya incluye los usuarios estándar del plan; cada usuario extra por encima de ese número se cobra a $6/mes.</p>
+
+<h3 id="modulos">3.3 Módulos Adicionales</h3>
+<p>Los módulos se venden por separado en cualquiera de las dos líneas de planes (con o sin consultoría). La excepción es el <strong>Plan Premium (sin consultoría)</strong>, que incluye de forma gratuita los módulos marcados como "Incluido": el resto de los clientes, en cualquier plan, debe contratarlos aparte.</p>
+<table>
+  <thead>
+    <tr><th>Módulo</th><th>Precio (USD/mes)</th><th>Incluido en Plan Premium</th></tr>
+  </thead>
+  <tbody>
+    <tr class="highlight-row"><td><strong>Stock</strong></td><td>—</td><td><span class="badge badge-green">✓ Incluido</span></td></tr>
+    <tr class="highlight-row"><td><strong>Fabricación</strong></td><td>—</td><td><span class="badge badge-green">✓ Incluido</span></td></tr>
+    <tr><td>Logística</td><td>$50</td><td>Se compra aparte</td></tr>
+    <tr><td>Libro IVA</td><td>$25</td><td>Se compra aparte</td></tr>
+    <tr><td>RR.HH</td><td>$50</td><td>Se compra aparte</td></tr>
+    <tr><td>Consolidado</td><td>$25</td><td>Se compra aparte</td></tr>
+    <tr><td>Comisiones</td><td>$50</td><td>Se compra aparte</td></tr>
+  </tbody>
+</table>
+
+<h3 id="roles">3.4 Roles Estándar (Plan Premium)</h3>
+<p>Los 5 usuarios incluidos en el Plan Premium (sin consultoría) están definidos por los siguientes roles estándar:</p>
+<div class="card-grid">
+  <div class="card"><h4>Rol</h4><div class="num">Gerente</div><div class="label">1 usuario</div></div>
+  <div class="card"><h4>Rol</h4><div class="num">Caja</div><div class="label">2 usuarios</div></div>
+  <div class="card"><h4>Rol</h4><div class="num">Compras</div><div class="label">1 usuario</div></div>
+  <div class="card"><h4>Rol</h4><div class="num">Ventas</div><div class="label">1 usuario</div></div>
+</div>
+
+<h3 id="vigencia">3.5 Vigencia del Esquema de Precios</h3>
+<blockquote>Este esquema de precios (planes con y sin consultoría, y lista de módulos) es válido <strong>hasta el sistema número 30 vendido</strong> por Asterisk. Alcanzado ese volumen, la política de precios debe reformularse en su totalidad.</blockquote>
+
+<hr>
+
+<!-- 4. PROGRAMA SOCIO ESTRATEGICO -->
+<h2 id="socio">4. PROGRAMA DE SOCIO ESTRATÉGICO</h2>
+<p>Este programa es un <strong>modelo estándar</strong>, aplicable de igual manera a cualquier Socio Estratégico de Asterisk, sea cual sea el plan que haya contratado (con o sin consultoría). No es un acuerdo particular: las reglas son las mismas para todos, y solo cambian los datos propios de cada socio.</p>
+
+<h3 id="definicion">4.1 Definición y Reconocimiento</h3>
+<p>Se reconoce como <strong>Socio Estratégico</strong> a todo cliente que invierte tempranamente en Asterisk —ya sea financiando desarrollo, aportando capital de arranque, o comprometiéndose como cliente ancla antes de que el producto tenga una base de clientes consolidada—. A cambio recibe:</p>
+<ol>
+  <li><strong>Canon decreciente:</strong> su cuota mensual se reduce a medida que Asterisk suma nuevos sistemas vendidos.</li>
+  <li><strong>Regalías perpetuas:</strong> un porcentaje sobre los ingresos brutos de nuevos clientes.</li>
+  <li><strong>Precio más bajo garantizado:</strong> cláusula de nación más favorecida.</li>
+  <li><strong>Prioridad estratégica:</strong> voz en el comité de producto y roadmap.</li>
+</ol>
+
+<h3 id="reduccion">4.2 Mecanismo de Reducción de Canon</h3>
+<p>La reducción se calcula como un <strong>porcentaje del canon del plan contratado</strong> por el socio (ver Sección 3), en función de la cantidad total de sistemas nuevos vendidos por Asterisk. El mismo mecanismo aplica sin importar si el socio está en un plan con o sin consultoría, y sin importar el nivel dentro de ese plan.</p>
+<table>
+  <thead>
+    <tr><th>Tramo</th><th>Sistemas Nuevos Vendidos</th><th>Canon del Socio</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Tramo 1</td><td>0 - 5</td><td>100% del canon contratado</td></tr>
+    <tr><td>Tramo 2</td><td>6 - 15</td><td>70% del canon contratado</td></tr>
+    <tr><td>Tramo 3</td><td>16 - 25</td><td>40% del canon contratado</td></tr>
+    <tr class="highlight-row"><td>Tramo 4</td><td>26 - 30</td><td><strong>Precio Fundador</strong> (mínimo: canon de sistema + nivel de entrada de su línea de plan)</td></tr>
+    <tr class="highlight-red"><td>A partir de 30</td><td>30+</td><td>El esquema completo se reformula (ver 3.5); se redefine también la reducción del socio</td></tr>
+  </tbody>
+</table>
+<p>El "Precio Fundador" del Tramo 4 corresponde al nivel más económico de la línea de plan del socio: Soporte Básico ($207/mes) para socios con consultoría, o Plan Normal ($26/mes) para socios sin consultoría.</p>
+
+<h3 id="regalias">4.3 Regalías Perpetuas</h3>
+<p>El Socio Estratégico recibe una <strong>regalía del 5% sobre los ingresos brutos</strong> (canon de sistema + soporte + módulos) de todos los clientes que ingresen después de él —excluyendo su propio canon—, a perpetuidad mientras continúe siendo cliente activo de Asterisk.</p>
+<p><strong>Justificación del 5%:</strong></p>
+<ul>
+  <li>Reconoce el rol fundacional sin diluir la propiedad de Asterisk.</li>
+  <li>Genera un incentivo directo para que el socio refiera nuevos clientes.</li>
+  <li>Es consistente con acuerdos de "founder royalty" habituales en modelos SaaS.</li>
+</ul>
+
+<h3 id="nacion">4.4 Cláusula de Nación Más Favorecida</h3>
+<p>El Socio Estratégico <strong>siempre pagará el precio más bajo</strong> de toda la base de clientes en su misma línea de plan (con o sin consultoría). Si en el futuro Asterisk lanza una promoción o descuento inferior al canon vigente del socio, este último se ajusta automáticamente a ese valor.</p>
+
+<h3 id="ejemplo">4.5 Ejemplo Aplicado</h3>
+<p>A modo ilustrativo, así se vería el programa aplicado a un socio con datos concretos. Estos valores deben reemplazarse por los reales de cada socio al momento de formalizar el acuerdo:</p>
+<table>
+  <thead>
+    <tr><th>Campo</th><th>Valor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Socio Estratégico</td><td class="placeholder">[NOMBRE DEL SOCIO]</td></tr>
+    <tr><td>Plan contratado</td><td class="placeholder">[Con Consultoría — Soporte Avanzado]</td></tr>
+    <tr><td>Canon contratado</td><td class="placeholder">$620/mes (USD)</td></tr>
+    <tr><td>Sistemas nuevos vendidos hoy</td><td class="placeholder">8</td></tr>
+    <tr><td>Tramo actual</td><td>Tramo 2 (70%)</td></tr>
+    <tr class="highlight-row"><td><strong>Canon actual del socio</strong></td><td><strong>$434/mes (USD)</strong></td></tr>
+    <tr><td>Ingresos brutos de otros clientes</td><td class="placeholder">$1.200/mes (USD)</td></tr>
+    <tr><td>Regalía (5%)</td><td>$60/mes (USD)</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- 5. BENEFICIOS -->
+<h2 id="beneficios">5. BENEFICIOS DEL MODELO</h2>
+
+<h3>5.1 Beneficios para el Socio Estratégico</h3>
+<div class="benefit-grid">
+  <div class="benefit-card"><h4>Reconocimiento fundacional</h4><p>Pasa de "cliente que paga" a "socio que impulsó el producto".</p></div>
+  <div class="benefit-card"><h4>Canon decreciente</h4><p>Su cuota baja automáticamente a medida que crece la base de clientes.</p></div>
+  <div class="benefit-card"><h4>Regalías perpetuas</h4><p>5% sobre ingresos de nuevos clientes, de por vida.</p></div>
+  <div class="benefit-card"><h4>Precio más bajo garantizado</h4><p>Nunca paga más que ningún otro cliente de su línea de plan.</p></div>
+  <div class="benefit-card"><h4>Voz en el producto</h4><p>Participa en el comité estratégico de producto.</p></div>
+  <div class="benefit-card"><h4>Sin dilución</h4><p>No requiere ceder acciones ni entrar en sociedad formal.</p></div>
+</div>
+
+<h3>5.2 Beneficios para Asterisk</h3>
+<div class="benefit-grid">
+  <div class="benefit-card"><h4>Estabilidad de caja</h4><p>El canon de los socios sostiene la operación durante la fase de crecimiento.</p></div>
+  <div class="benefit-card"><h4>Clientes ancla</h4><p>Casos de éxito reales para vender a nuevos clientes.</p></div>
+  <div class="benefit-card"><h4>Modelo estandarizado</h4><p>Reglas iguales para todos los socios: evita negociaciones caso por caso.</p></div>
+  <div class="benefit-card"><h4>Incentivos alineados</h4><p>Los socios se convierten en promotores activos del producto.</p></div>
+</div>
+
+<hr>
+
+<!-- 6. RIESGOS -->
+<h2 id="riesgos">6. RIESGOS Y MITIGACIÓN</h2>
+<table>
+  <thead>
+    <tr><th>Riesgo</th><th>Probabilidad</th><th>Impacto</th><th>Mitigación</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>El socio no acepta el modelo</strong></td><td>Media</td><td>Alto</td><td>Ejemplo financiero claro (Sección 4.5); precio más bajo garantizado de por vida.</td></tr>
+    <tr><td><strong>No se alcanzan los hitos de sistemas vendidos</strong></td><td>Media</td><td>Alto</td><td>Pipeline comercial activo; revisión semestral del mecanismo.</td></tr>
+    <tr><td><strong>Se llega a 30 sistemas y hay que reformular</strong></td><td>Alta (es el objetivo)</td><td>Medio</td><td>Cláusula explícita de reformulación conjunta al llegar al hito (Sección 3.5).</td></tr>
+    <tr><td><strong>Conflicto sobre propiedad intelectual</strong></td><td>Baja</td><td>Crítico</td><td>Contrato claro: la PI pertenece a Asterisk; las regalías compensan la inversión inicial.</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- 7. PLAN DE IMPLEMENTACION -->
+<h2 id="plan">7. PLAN DE IMPLEMENTACIÓN</h2>
+
+<div class="phase">
+  <span class="tag">SOLO PLANES CON CONSULTORÍA · Meses 1-3</span>
+  <h3>Implementación Acompañada</h3>
+  <p>Incluida en todos los niveles de soporte (Básico, Estándar, Avanzado, Exclusivo). Asterisk guía la puesta en marcha, capacita al equipo del cliente y ajusta la configuración inicial del sistema.</p>
+</div>
+
+<div class="phase">
+  <span class="tag">PLANES SIN CONSULTORÍA</span>
+  <h3>Autogestión desde el Día 1</h3>
+  <p>No hay período de implementación acompañada: el cliente recibe el sistema configurado y se apoya en el soporte de mantenimiento para incidencias puntuales, sin guía sobre cómo operar el negocio con el sistema.</p>
+</div>
+
+<div class="phase">
+  <span class="tag">PARA SOCIOS ESTRATÉGICOS</span>
+  <h3>Seguimiento del Programa</h3>
+  <p>Cada vez que Asterisk suma sistemas nuevos, se revisa el tramo correspondiente (Sección 4.2) y se actualiza el canon y la regalía del socio en la facturación del mes siguiente.</p>
+</div>
+
+<hr>
+
+<!-- 8. GLOSARIO -->
+<h2 id="glosario">8. GLOSARIO DE TÉRMINOS</h2>
+<table>
+  <thead>
+    <tr><th>Término</th><th>Definición</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Canon</strong></td><td>Cuota mensual fija que paga un cliente por el uso del sistema.</td></tr>
+    <tr><td><strong>Canon de Sistema</strong></td><td>Componente base del canon, común a todos los niveles de un mismo plan.</td></tr>
+    <tr><td><strong>Canon de Soporte</strong></td><td>Componente variable del canon en planes con consultoría, según el nivel de soporte elegido.</td></tr>
+    <tr><td><strong>Sistema vendido</strong></td><td>Cada implementación nueva (cliente nuevo) que Asterisk incorpora, en cualquiera de los dos tipos de plan.</td></tr>
+    <tr><td><strong>Regalía</strong></td><td>5% sobre ingresos brutos de terceros que recibe el Socio Estratégico a perpetuidad.</td></tr>
+    <tr><td><strong>Socio Estratégico</strong></td><td>Designación que reconoce a un cliente como inversor o cliente ancla temprano del producto.</td></tr>
+    <tr><td><strong>Precio Fundador</strong></td><td>Canon mínimo posible dentro de la línea de plan del socio, alcanzado en el Tramo 4.</td></tr>
+    <tr><td><strong>Nación Más Favorecida</strong></td><td>Cláusula que garantiza al socio el precio más bajo de toda la base de clientes de su línea de plan.</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<!-- 9. PROXIMOS PASOS -->
+<h2 id="proximos">9. PRÓXIMOS PASOS</h2>
+<ol>
+  <li><strong>Revisión del modelo</strong> por Asterisk y validación interna del esquema de precios y del programa.</li>
+  <li><strong>Presentación</strong> de la propuesta a cada socio estratégico, completando la Sección 4.5 con sus datos reales.</li>
+  <li><strong>Redacción del contrato</strong> individual de Socio Estratégico, con cláusula de nación más favorecida.</li>
+  <li><strong>Firma del acuerdo</strong> y alta del socio en el seguimiento de tramos.</li>
+  <li><strong>Publicación del material comercial</strong> con la lista de planes y módulos para nuevos clientes.</li>
+</ol>
+
+<hr>
+
+<div class="footer-note">
+  <strong>Documento preparado por la dirección de Asterisk.</strong><br>
+  Este documento es confidencial y contiene información privilegiada del negocio. No debe ser distribuido sin autorización expresa.<br>
+  Versión 3.0 — Modelo general de planes y Programa de Socio Estratégico, válido hasta el sistema Nº 30 vendido.
+</div>
+
+</div>
+</body>
+</html>
