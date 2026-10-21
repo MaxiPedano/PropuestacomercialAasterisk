@@ -37,11 +37,16 @@ const server = http.createServer((req, res) => {
       const hash = await link.getAttribute('href');
       assert.equal(await page.locator(hash).count(), 1);
     }
-    const shares = await page.locator('#share-buttons a').evaluateAll(as => as.map(a => a.href));
-    for (const link of shares) assert.ok(decodeURIComponent(link).includes('https://maxipedano.github.io/PropuestacomercialAasterisk/'));
-    assert.match(await page.locator('.contact-link').getAttribute('href'), /5493534746217/);
-    await page.locator('#copy-link').click();
-    assert.ok((await page.locator('#copy-status').innerText()).length > 0);
+    assert.equal(await page.locator('#share-buttons, .contact-link, a[href*="wa.me"]').count(), 0);
+    assert.equal(await page.locator('#module-options input').count(), 14);
+    assert.equal(await page.locator('#module-grid button').count(), 14);
+    for (const input of await page.locator('#module-options input').all()) await input.uncheck();
+    for (const id of ['fabricacion', 'internacionales', 'fletes']) await page.locator(`#module-options input[value="${id}"]`).check();
+    assert.match(await page.locator('#estimate-result').innerText(), /USD 138/);
+    await page.locator('[data-module="fabricacion"]').click();
+    assert.match(await page.locator('#dialog-content').innerText(), /sin cargo adicional/);
+    assert.equal(await page.locator('#dialog-content a[href*="plantillas-de-costo"]').count(), 1);
+    await page.keyboard.press('Escape');
     for (const width of [360, 768, 1200, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Overflow at ${width}`);
@@ -52,10 +57,10 @@ const server = http.createServer((req, res) => {
     await page.locator('#nav a[href="#precios"]').click();
     assert.equal(await page.locator('.menu-toggle').getAttribute('aria-expanded'), 'false');
     assert.equal(errors.length, 0, errors.join('\n'));
-    console.log('Navegación, diálogo/ESC/foco, calculadora, validación, compartir, menú móvil y responsive: OK.');
+    console.log('Navegación, diálogo/ESC/foco, calculadora con 14 módulos, costos incluidos, ausencia de contacto y compartir, menú móvil y responsive: OK.');
     const external = await page.locator('a[href^="https://"]').evaluateAll(as => [...new Set(as.map(a => a.href))].filter(url => /docs\.asterisksuite|dev\.asterisksuite|asteriskconsultora\.com/.test(url)));
     const { modules } = require('../catalog.js');
-    for (const url of new Set([...external, ...modules.map(m => m.documentation)])) {
+    for (const url of new Set([...external, ...modules.map(m => m.documentation), ...modules.flatMap(m => m.resources.map(r => r.url))])) {
       try { const response = await fetch(url, { signal: AbortSignal.timeout(20000) }); console.log(`${response.status} ${url}`); }
       catch (error) { console.log(`NO VERIFICADO ${url}: ${error.message}`); }
     }

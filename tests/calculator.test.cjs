@@ -7,7 +7,7 @@ test('ejemplo comercial: una empresa, tres usuarios, ventas e inventario', () =>
 });
 test('módulos por empresa, usuarios y bases como cantidades totales', () => {
   const r = calculate({ companies: 2, users: 5, databases: 1, selected: modules.map(m => m.id) });
-  assert.equal(r.moduleCost, 204); assert.equal(r.monthly, 289); assert.equal(r.annual, 3468);
+  assert.equal(r.moduleCost, 568); assert.equal(r.monthly, 653); assert.equal(r.annual, 7836);
 });
 test('base sin módulos y sin advertencia de selección', () => {
   const r = calculate({ companies: 1, users: 1, databases: 0, selected: [] });
@@ -15,4 +15,13 @@ test('base sin módulos y sin advertencia de selección', () => {
 });
 test('cantidades negativas, vacías, fraccionarias o excesivas rechazadas', () => {
   for (const value of [-1, 0, 1.5, NaN, Infinity, 10001]) assert.throws(() => calculate({ companies: value, users: 1, databases: 0, selected: [] }), RangeError);
+});
+test('fabricación incluye costos y operaciones internacionales tiene tarifa superior', () => {
+  assert.equal(modules.length, 14);
+  assert.equal(modules.some(m => m.id === 'costos'), false);
+  const r = calculate({ companies: 1, users: 1, databases: 0, selected: ['fabricacion', 'internacionales', 'fletes'] });
+  assert.equal(r.moduleCost, 103);
+  assert.equal(r.monthly, 128);
+  assert.equal(r.annual, 1536);
+  assert.match(modules.find(m => m.id === 'fabricacion').dependencies, /sin cargo adicional/);
 });

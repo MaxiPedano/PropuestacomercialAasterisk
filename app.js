@@ -1,9 +1,9 @@
 (() => {
   'use strict';
-  const { config, modules, calculate } = window.Proposal;
+  const { modules, calculate } = window.Proposal;
   const $ = s => document.querySelector(s);
   const money = value => 'USD ' + new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 }).format(value);
-  $('#module-grid').innerHTML = modules.map((m, i) => `<article class="card module-card"><span class="module-number">MÓDULO / 0${i + 1}</span><span class="module-status">${m.availability}</span><h3>${m.name}</h3><p>${m.description}</p><div class="price">${money(m.price)}<small>por empresa/mes · propuesto</small></div><button type="button" data-module="${m.id}" aria-haspopup="dialog">Explorar ${m.short} <span aria-hidden="true">↗</span></button></article>`).join('');
+  $('#module-grid').innerHTML = modules.map((m, i) => `<article class="card module-card"><span class="module-number">MÓDULO / ${String(i + 1).padStart(2, '0')}</span><span class="module-status">${m.availability}</span><h3>${m.name}</h3><p>${m.description}</p><div class="price">${money(m.price)}<small>por empresa/mes · propuesto</small></div><button type="button" data-module="${m.id}" aria-haspopup="dialog">Explorar ${m.short} <span aria-hidden="true">↗</span></button></article>`).join('');
   $('#module-options').innerHTML = modules.map(m => `<label><input type="checkbox" value="${m.id}" ${['ventas', 'inventario'].includes(m.id) ? 'checked' : ''}><span>${m.short}</span><b>${money(m.price)}</b></label>`).join('');
   const dialog = $('#module-dialog');
   $('#module-grid').addEventListener('click', event => {
@@ -11,6 +11,16 @@
     if (!button) return;
     const m = modules.find(m => m.id === button.dataset.module);
     $('#dialog-content').innerHTML = `<span class="tag">${m.availability}</span><h2 id="dialog-title">${m.name}</h2><p>${m.description}</p><ul>${m.features.map(f => `<li>${f}</li>`).join('')}</ul><h3>Dependencias operativas</h3><p>${m.dependencies}</p><p class="price">${money(m.price)} / empresa / mes</p><p class="note">Precio propuesto. Contratación independiente y disponibilidad productiva a confirmar.</p><a class="button" href="${m.documentation}" target="_blank" rel="noopener noreferrer">Ver documentación oficial ↗</a><p class="note">Videos oficiales: pendientes de configuración.</p>`;
+    for (const resource of m.resources) {
+      const paragraph = document.createElement('p');
+      const link = document.createElement('a');
+      link.href = resource.url;
+      link.textContent = resource.name + ' ↗';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      paragraph.append(link);
+      $('#dialog-content').append(paragraph);
+    }
     dialog.showModal();
   });
   $('.dialog-close').addEventListener('click', () => dialog.close());
@@ -48,18 +58,4 @@
   let scheduled = false;
   window.addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(() => { activeSection(); scheduled = false; }); } }, { passive: true });
   activeSection();
-  const url = encodeURIComponent(config.publicUrl);
-  const text = encodeURIComponent(config.shareText);
-  const shares = [
-    ['WhatsApp', `https://wa.me/?text=${encodeURIComponent(config.shareText + ' ' + config.publicUrl)}`],
-    ['LinkedIn', `https://www.linkedin.com/sharing/share-offsite/?url=${url}`],
-    ['Facebook', `https://www.facebook.com/sharer/sharer.php?u=${url}`],
-    ['X', `https://twitter.com/intent/tweet?text=${text}&url=${url}`]
-  ];
-  $('#share-buttons').innerHTML = shares.map(([name, href]) => `<a class="button" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="Compartir en ${name}">${name} ↗</a>`).join('') + '<button class="button" id="copy-link" type="button">Copiar enlace</button>';
-  $('#copy-link').addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(config.publicUrl); $('#copy-status').textContent = 'Enlace copiado.'; $('#copy-fallback').hidden = true; }
-    catch { const field = $('#copy-fallback'); field.value = config.publicUrl; field.hidden = false; field.focus(); field.select(); $('#copy-status').textContent = 'Copiá el enlace seleccionado con Ctrl+C o desde el menú de tu dispositivo.'; }
-  });
-  document.querySelectorAll('.contact-link').forEach(a => a.href = `https://wa.me/${config.whatsapp}?text=${encodeURIComponent(config.contactText)}`);
 })();
