@@ -1,0 +1,5 @@
+{
+  "name": "asterisk-propuesta-estudios",
+  "private": true,
+  "scripts": { "build": "node scripts/build.cjs", "test": "node --test tests/calculator.test.cjs" }
+}
